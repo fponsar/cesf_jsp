@@ -29,13 +29,17 @@ public class SeLibro extends HttpServlet {
 		// TODO Auto-generated method stub
 		
 		Libro libro = new Libro() ;
-		libro.setIsbn(isbn);
-		libro.setTitulo(titulo) ;
-		libro.setPrecio(precio) ;
-		
-		
+	
 		request.setAttribute("libro", libro);
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		
+		
+		String salida = "Libro ISBN  "  ;
+
+
+		request.getParameter("isbn");
+		request.getParameter("titulo");
+		request.getRequestDispatcher("libros.jsp").forward(request, response); 
+
 	}
 
 	/**
